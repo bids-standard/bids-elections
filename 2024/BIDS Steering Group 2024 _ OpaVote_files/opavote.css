@@ -1,0 +1,1058 @@
+:root {
+  /* Colors from the OpaVote pie-chart logo */
+  --dark-blue: #3d486f;
+  --light-blue: #79CBD9;
+  --coral: #EB505C;
+  --yellow: #F7E245;
+  --green:#85C138;
+
+  /* other useful colors */
+  --light-gray: #d9e1ee;
+}
+
+/* Global stuff
+-------------------------------------------------- */
+
+/* Remove links when printing */
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .width-md {
+    width: 970px;
+  }
+}
+
+p.vcenter { margin: 10px 0;}
+
+.topm10 {
+  margin: 10px 0 0 0;
+}
+
+.topm20 {
+  margin: 20px 0 0 0;
+}
+
+.bottomm10 {
+  margin: 0 0 10px 0;
+}
+
+.bottomm20 {
+
+  margin: 0 0 20px 0;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.btn-success, .btn-info, .btn-danger {
+  color:#444444;
+}
+
+/* Fix jQuery UI font size */
+#ui-datepicker-div { font-size:0.8em; }
+
+/* Allow touch punch to work on MS devices */
+.ui-draggable { -ms-touch-action: none; }
+
+/* Modals */
+/* It is ridiculous how hard it is to change the background color of the header
+and maintain the rounded corners, and it doesn't even work perfectly. */
+.modal-header {
+  color: #eeeeee;
+  background-color: #3d486f;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+ }
+.modal-header button {color: #eeeeee; opacity: 1;}
+.modal-header button span {font-size: 14px;}
+h4.modal-title {color: #FFFFFF;}
+
+/* Display Droop threshold in help page */
+.eqn {display: flex; justify-content: center; align-items: center;}
+span.frac {display: inline-block; text-align: center; padding:0 5px;}
+span.frac span.num {display: block; border-bottom: 1px solid;}
+span.frac > span.den {display: block;}
+
+html, body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3d486f;
+  font-weight: 500;
+}
+
+.blue {
+  background: #3d486f;
+  color: #fff;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: underline;
+  transition: color ease 0.4s;
+}
+
+.btn, header a, footer a, .nav a {text-decoration: none;}
+
+a:hover {
+  text-decoration: none;
+}
+
+.blue a {
+  color: #99bcdb;
+}
+
+.white {
+  background: white;
+}
+
+.blue h2, .blue h3, .blue h4, .blue h5, .blue h6, .blue p {
+  color: white;
+}
+
+code {
+  font-size: 0.8em;
+  color: #3d486f;
+  display:inline-block;
+  margin-left:2em;
+}
+
+samp {font-size: 0.8em;}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #3d486f;
+  margin: 10px auto;
+}
+
+.max-width-100px { max-width:100px; }
+.max-width-250px { max-width:250px; }
+
+.table-nonfluid {
+  width: auto !important;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#dynamic-modal { overflow-y: scroll; }
+
+
+/* Navbar
+-------------------------------------------------- */
+
+header {
+  background: #3d486f;
+  flex: none;
+}
+
+.navbar-default {
+  background: transparent;
+  border: 0;
+  margin: 15px 0;
+}
+
+#site-nav a {
+  color: #fff;
+  font-weight: normal;
+}
+
+#site-nav .navbar-btn { padding-left:10px; }
+
+#site-nav .navbar-btn a {
+  color: #3d486f;
+  padding: 4px 8px;
+  margin: 2px 0;
+}
+
+#site-nav a:hover, #site-nav a:focus,
+#site-nav .dropdown-menu a:hover,
+#site-nav .dropdown-menu a:focus {
+  color: rgba(255,255,255,0.75);
+}
+
+#site-nav .navbar-btn a.btn, #site-nav .navbar-btn a.btn:hover {
+  padding: 6px 12px;
+  color: #3d486f;
+  border: 0;
+}
+
+#site-nav > ul > li > a { padding: 15px 10px; }
+
+@media screen and (min-width: 768px) {
+  .navbar-default .dropdown-menu {
+    background: #3d486f;
+  }
+  #site-nav .open a, #site-nav .open a:focus, #site-nav .open a:hover {
+    background: #3d486f;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #site-nav .open a { background: transparent; }
+  #site-nav {border-top: 0; box-shadow: none; }
+  #site-nav > ul > li > a { padding: 3px 10px; }
+  #site-nav a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.navbar-brand {
+  padding: 0 0;
+  width: 205px;
+  height: 56px;
+  display: block;
+}
+
+.navbar-default .navbar-toggle .icon-bar { background-color: #FFF; }
+
+.no-menu-header {
+  margin: 15px auto;
+  position: relative;
+}
+
+/* Left Navbar
+-------------------------------------------------- */
+.navbar-side {
+  overflow: auto;
+  color: #fff;
+  background: #3d486f;
+  position: fixed;
+  top: 0px;
+  width: 180px;
+  padding: 0 15px;
+}
+.navbar-side a { color: #fff; }
+.navbar-side-header { margin: 15px 0; }
+.navbar-side-header img {
+  width: 150px;
+  height: 41px;
+}
+.navbar-side ul, .navbar-side li { list-style: none; }
+.navbar-side ul { padding-left: 15px; }
+.navbar-side li {
+  font-size: 1.1em;
+  padding: 10px 0;
+}
+.navbar-side li span {margin-right: 10px;}
+.navbar-side li a {
+  text-decoration: none;
+  transition: color ease 0.4s;
+}
+@media (max-width: 767px) {
+  .navbar-side {
+    position: relative;
+    width: 100%;
+  }
+  .navbar-side li {
+    padding: 10px 0;
+  }
+  .navbar-side .navbar-toggle { display: block; }
+}
+@media (min-width: 768px) {
+  #menu-content { display: block; }
+  .navbar-side { height: 100%; }
+  .navbar-side .navbar-toggle { display: none; }
+  .manage { margin-left:180px };
+}
+.navbar-toggle .icon-bar { background-color: #fff; }
+.navbar-toggle { border-color: #fff; }
+
+
+/* Sticky footer styles
+https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
+-------------------------------------------------- */
+
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: #555;
+}
+.content {
+  flex: 1 0 auto;
+}
+footer {
+  background: #3d486f;
+  width: 100%;
+  height: 50px;
+  padding: 14px 10px;
+  flex: none;
+}
+
+footer a {
+  font-weight: normal;
+}
+
+footer .footer-nav {
+  padding: 0;
+}
+
+footer .footer-nav ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+footer .footer-nav ul li {
+  display: inline-block;
+}
+
+footer .footer-nav ul li:not(last-child) {
+  margin-right: 30px;
+}
+
+footer .footer-nav ul li a {
+  color: white;
+}
+
+/* Home
+-------------------------------------------------- */
+
+.try-btn, .demo-btn {
+  font-size: 1.2em;
+  color: #3d486f;
+  padding: 10px 30px;
+  font-weight: 600;
+  line-height: 1;
+  border: 0;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.try-btn, .try-btn:hover {
+  color: #3d486f;
+  border: 0;
+  background: #F26B72;
+}
+
+.demo-btn, .demo-btn:hover {
+  color: #3d486f;
+  border: 0;
+  background: #8DD5E1;
+}
+
+#banner {
+  height: 450px;
+  background: url(/static/img/banner-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  /* To vertically center contents */
+  flex-grow: 1;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+
+}
+
+.intro div { width:100%; }
+
+.intro .openstv {
+  max-width:500px;
+  margin: 20px auto 0 auto;
+  color: black;
+  background-color: #fcd050;
+  border: 0;
+}
+
+.intro h1 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 2.6em;
+  margin: 0;
+}
+
+.intro .slogan {
+  margin: 30px 0;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.home-band {
+  padding: 50px 0;
+}
+
+.home-band h2 {
+  font-size: 2.0em;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.home-band h3 {
+  font-size: 1.1em;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.point {
+  text-align: center;
+}
+
+.point-img {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.point-img img {
+  max-width: 100%;
+}
+
+.evenly-space {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+}
+
+.testimonial {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.user-images {
+  margin-top: 30px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-images div {
+  width: 16%;
+  padding: 0 15px;
+}
+
+.user-images div img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  #banner { height: auto }
+  #banner .container { width: 100% }
+  .points > div { margin: 10px 0 }
+  .testimonial { font-size: 1.0em }
+}
+
+#subscribe-form {
+  position:fixed;
+  width: 340px;
+  bottom:0;
+  left:0;
+  padding: 9px;
+  margin: 0 0 10px 10px;
+  border-radius: 3px;
+  background-color: #fcd050;
+}
+
+#subscribe-form > button {
+  right: -3px;
+  top: -10px;
+  opacity: 1;
+  color: #333;
+}
+
+#subscribe-form .row { margin: 0 -8px; }
+#subscribe-form .col { padding: 0 8px; }
+
+
+/* Pricing page
+-------------------------------------------------- */
+
+.pricing-panel {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.pricing {
+  li {
+    list-style-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 26" stroke-width="1.8" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /> </svg>');
+  }
+
+  li::marker {
+    font-size: 2.2rem;
+    line-height: 0.1;
+  }
+}
+
+.flex-wrap {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+/* Help page
+-------------------------------------------------- */
+
+
+.affix { top:0px; }
+
+.sidebar { margin-top: 20px; }
+
+.sidebar > li > a {
+  color:#333;
+  padding:4px 0px;
+}
+
+.sidebar ul > li > a {
+  font-size:13px;
+  color:#555;
+  padding:1px 0px 1px 20px;
+}
+
+/* Console
+-------------------------------------------------- */
+
+table.simple-list {
+  width: 100%;
+  margin-bottom: 10px;
+
+  td {
+    border-top: none;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  th {
+    color: var(--dark-blue);
+    border-top: none !important;
+    border-bottom: 2px solid var(--light-blue);
+  }
+
+  tr {
+    border-top: none;
+  }
+}
+
+.width-150px {
+  width:150px;
+  margin:5px 0;
+}
+
+.intro-nux {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.intro-nux > *:last-child { margin-bottom: 0; }
+
+.item-blurb {
+  max-width: 250px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+}
+
+.select-price {
+  -webkit-appearance: menulist-button;
+  height: 29px;
+}
+
+/* Manage pages
+-------------------------------------------------- */
+
+.manage { max-width: 1400px; }
+
+.manage h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.manage h2 {
+  margin: 10px 0;
+}
+
+/* Used to imitate form row formatting for non-form inputs. */
+.form-row {
+  margin-bottom:15px
+}
+
+.wide-btn {
+  width:165px;
+  margin:5px;
+}
+
+.info-block {
+  border:1px solid black;
+  border-radius:4px;
+  margin:0 0 10px 0;
+  padding:5px 10px;
+  background-color: #fce060;
+}
+
+.info-block p {
+  margin-bottom: 2px;
+}
+
+.info-block p:last-child {
+  margin-bottom: 0;
+}
+
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+}
+.upload-btn input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+.ballot-editor-template {
+  display: none;
+}
+
+.editor-block {
+  background-color: #e5e5e5;
+  border:1px solid #e5e5e5;
+  border-radius:4px;
+  padding:10px;
+}
+
+div#method-options label.control-label {
+  font-weight:normal;
+}
+
+div#method-options select {
+  display:inline-block;
+  padding-top:1px;
+  padding-bottom:1px;
+  height:24px;
+}
+
+div#method-options input {
+  display:inline-block;
+  height:24px;
+  width:24px;
+}
+
+input.width100 {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+table#blt-candidates {
+  margin:0 auto 20px auto;
+}
+
+table#blt-candidates td, table#blt-candidates th {
+  padding:1px 5px;
+}
+
+.blt-editor input {
+  border:0;
+  outline:0;
+  padding:0;
+  text-align:center;
+}
+
+.voter-columns {
+  -moz-column-width: 20em;
+  -webkit-column-width: 20em;
+  column-width: 20em;
+}
+
+.voter-columns ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* correct webkit/chrome uneven margin on the first column*/
+.voter-columns ul li:first-child
+{
+    margin-top:0px;
+}
+
+ul.nav-tabs {
+  border-bottom: 1px solid #3d486f;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  border: 1px solid #3d486f;
+  border-bottom-color: transparent;
+  color: #333;
+  font-weight: bold;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+  border-bottom-color: #3d486f;
+  background-color: #eee;
+  color: #555;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.election-tabs > li {
+  float: left;
+  width: 25%;
+}
+
+.poll-tabs > li {
+  float: left;
+  width: 50%;
+}
+
+.fb-share-button {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: 73px;
+}
+
+.twitter-share-button {
+  display: inline-block;
+  width: 76px;
+}
+
+#twitter-widget-0 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-gmail {
+  padding:3px 12px;
+  margin-left: 2px;
+}
+
+.tiebreak-name {
+  margin-right: 20px;
+  white-space:nowrap;
+}
+
+/* Election page
+-------------------------------------------------- */
+
+.width-sm {
+  max-width: 750px;
+}
+
+.election-bg {
+  background-color: #dddddd;
+}
+
+.election h1, .election h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.chunk {
+  background: white;
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .chunk { margin: 10px -15px; }
+}
+
+.election button {
+  margin:2px 5px 3px 0;
+  padding:3px 8px;
+}
+
+div.ballot-wrapper {
+  text-align:center;
+  margin: 0 0 10px 0;
+  max-width:100%; /* prevents overflow */
+}
+
+.candidate-list {
+  display:inline-block;
+  vertical-align:top;
+  text-align:left;
+  margin-right:10px;
+  max-width:100%;
+}
+
+.candidate-list ul {
+  padding: 0 0;
+}
+
+.candidate-list ul li {
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.ballot-box {
+  border: 2px solid #000000;
+  border-radius:3px;
+  padding: 0px;
+  display:inline-block;
+  vertical-align:top;
+  text-align:left;
+  position:relative;
+  max-width:100%;
+}
+
+.ballot-box p:first-child, .candidate-list p:first-child {
+  margin:0 5px;
+  font-weight:bold;
+}
+
+.ballot-box ol {
+  margin: 10px 0px;
+  padding: 0px 10px 0px 30px;
+  list-style-type:none;
+}
+
+.ballot-box ol li {
+  height:28px;
+  margin: 4px 0;
+  padding: 3px 5px;
+  border: 1px solid black;
+  background-color: #fcd050;
+  min-width:60px;
+  white-space:nowrap;
+  overflow:hidden;
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor:    -moz-grab;
+  cursor:         grab;
+}
+
+.ballot-box ol li:active {
+    cursor: -webkit-grabbing;
+    cursor:    -moz-grabbing;
+    cursor:         grabbing;
+}
+
+.ballot-box ul li {
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.choose-one ul {
+  margin: 10px 0px;
+  padding: 0px 10px 0px 10px;
+  list-style-type: none;
+}
+
+.choose-one ol {
+  display:none;
+}
+
+.choose-one ul li {
+  height:28px;
+  margin: 4px 0;
+  padding: 4px 0 4px 25px;
+  min-width:60px;
+  cursor:pointer;
+}
+
+li.empty {
+  background:url('/static/img/box-combined.png') no-repeat 0 0;
+}
+
+li.checked {
+  background:url('/static/img/box-combined.png') no-repeat 0 -28px;
+}
+
+#locale {
+  display:inline-block;
+  position: absolute;
+  right: 15px;
+  height: 56px;
+  line-height: 56px;
+}
+
+#locale select {
+  background-color: #dddddd;
+  vertical-align: middle;
+}
+
+/* Reports
+-------------------------------------------------- */
+
+@media print {
+  .results {
+    font-size:0.6em !important;
+  }
+}
+
+.results h1, .results h2 {
+  text-align: center;
+}
+
+.results hr {
+  height: 1px;
+}
+
+.my-pill {
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #3d486f;
+  border-radius: 4px;
+  text-align: center;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #3d486f;
+  color: #fff;
+}
+
+.my-pill a:hover {
+  color: #ff5252;
+}
+
+.my-pill a,
+.my-pill a:focus {
+  color: #fff;
+}
+
+table.results {
+  border-collapse:collapse;
+}
+
+table.results tr td {
+  border: 1px solid black;
+}
+
+table.results tr:first-child td {
+  border-top: none;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+table.results tr td:first-child {
+  border-left: none;
+  border-right: 2px solid black;
+  font-weight: bold;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td.wins { background-color:#87cf32 }
+td.loses { background-color:#f36565 }
+td.ties { background-color:#aaaaaa }
+
+.expired {
+  max-height: 300px;
+  overflow: hidden;
+  padding: 0 0;
+}
+
+.expired img { width: 100%; }
+
+/* Admin page
+-------------------------------------------------- */
+
+table.admin {
+  border-collapse:collapse;
+  width: 100%;
+}
+
+table.admin, table.admin td, table.admin th {
+  border: 1px solid black;
+}
+
+/* Stripe
+-------------------------------------------------- */
+
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+/* Social Buttons for Bootstrap
+ * Copyright 2013-2015 Panayiotis Lipiridis
+ * Licensed under the MIT License
+ * https://github.com/lipis/bootstrap-social */
+
+.btn-social{width:250px;position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}
+.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}
+
+.btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}.btn-facebook:hover,.btn-facebook:focus,.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
+.btn-facebook.disabled,.btn-facebook[disabled],fieldset[disabled] .btn-facebook,.btn-facebook.disabled:hover,.btn-facebook[disabled]:hover,fieldset[disabled] .btn-facebook:hover,.btn-facebook.disabled:focus,.btn-facebook[disabled]:focus,fieldset[disabled] .btn-facebook:focus,.btn-facebook.disabled:active,.btn-facebook[disabled]:active,fieldset[disabled] .btn-facebook:active,.btn-facebook.disabled.active,.btn-facebook[disabled].active,fieldset[disabled] .btn-facebook.active{background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+.btn-facebook .badge{color:#3b5998;background-color:#fff}
+
+.btn-google{color:#fff;background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}.btn-google:hover,.btn-google:focus,.btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}
+.btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{background-image:none}
+.btn-google.disabled,.btn-google[disabled],fieldset[disabled] .btn-google,.btn-google.disabled:hover,.btn-google[disabled]:hover,fieldset[disabled] .btn-google:hover,.btn-google.disabled:focus,.btn-google[disabled]:focus,fieldset[disabled] .btn-google:focus,.btn-google.disabled:active,.btn-google[disabled]:active,fieldset[disabled] .btn-google:active,.btn-google.disabled.active,.btn-google[disabled].active,fieldset[disabled] .btn-google.active{background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
+.btn-google .badge{color:#dd4b39;background-color:#fff}
+
+.btn-microsoft{color:#fff;background-color:#2672ec;border-color:rgba(0,0,0,0.2)}.btn-microsoft:hover,.btn-microsoft:focus,.btn-microsoft:active,.btn-microsoft.active,.open>.dropdown-toggle.btn-microsoft{color:#fff;background-color:#125acd;border-color:rgba(0,0,0,0.2)}
+.btn-microsoft:active,.btn-microsoft.active,.open>.dropdown-toggle.btn-microsoft{background-image:none}
+.btn-microsoft.disabled,.btn-microsoft[disabled],fieldset[disabled] .btn-microsoft,.btn-microsoft.disabled:hover,.btn-microsoft[disabled]:hover,fieldset[disabled] .btn-microsoft:hover,.btn-microsoft.disabled:focus,.btn-microsoft[disabled]:focus,fieldset[disabled] .btn-microsoft:focus,.btn-microsoft.disabled:active,.btn-microsoft[disabled]:active,fieldset[disabled] .btn-microsoft:active,.btn-microsoft.disabled.active,.btn-microsoft[disabled].active,fieldset[disabled] .btn-microsoft.active{background-color:#2672ec;border-color:rgba(0,0,0,0.2)}
+.btn-microsoft .badge{color:#2672ec;background-color:#fff}
+
+/* Trix Editor */
+trix-toolbar {
+  .custom-trix-button-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow-x: auto;
+  }
+}

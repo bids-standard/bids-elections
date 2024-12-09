@@ -1,0 +1,39 @@
+OpaVote Election Results (https://opavote.com/)
+
+BIDS Steering Group 2024
+
+There are 5 candidates competing for 1 seats. The number of voters is 102 and
+there were 99 valid votes and 3 empty votes.
+
+Method Options:
+    Candidate Elimination -- Zero
+    Weak Tie Breaking -- Backward
+    Remove Overvotes -- Skip
+    Remove Undervotes -- Skip
+
+Counting votes using Instant Runoff Voting.
+
+ R|Alessio Gia|Arnaud Delo|Ashley Stew|Franco Pest|Lyuba Zehl |Exhausted  
+  |comel      |rme        |art        |illi       |           |           
+==========================================================================
+ 1|          4|         20|         16|         41|         18|          0
+  |-----------------------------------------------------------------------
+  | Count of first choices.
+==========================================================================
+ 2|           |         20|         18|         43|         18|          0
+  |-----------------------------------------------------------------------
+  | Count after eliminating Alessio Giacomel and transferring votes.
+==========================================================================
+ 3|           |         23|           |         49|         26|          1
+  |-----------------------------------------------------------------------
+  | Count after eliminating Ashley Stewart and transferring votes.
+  | Candidates Ashley Stewart and Lyuba Zehl were tied when choosing
+  | candidates to eliminate. Candidate Ashley Stewart was chosen by
+  | breaking the tie at round 1.
+==========================================================================
+ 4|           |           |           |         59|         34|          6
+  |-----------------------------------------------------------------------
+  | Count after eliminating Arnaud Delorme and transferring votes.
+  | Candidate Franco Pestilli is elected.
+
+Winner is Franco Pestilli.
